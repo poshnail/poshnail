@@ -1,46 +1,46 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // Select all feature-card divs
-        const featureCards = document.querySelectorAll(".feature-card");
+function scrollToTarget(target) {
+    document.querySelector(target)?.scrollIntoView({ behavior: 'smooth' });
+    window.location.hash = target;
+}
 
-        // Add click event listeners
-        featureCards.forEach(card => {
-            card.addEventListener("click", function () {
-                const target = card.getAttribute("data-target");
-                if (target) {
-                    // Scroll to the target section
-                    document.querySelector(target)?.scrollIntoView({ behavior: "smooth" });
-
-                    // Optionally update the URL hash
-                    window.location.hash = target;
-                }
-            });
-        });
-    });
-
-    document.addEventListener("DOMContentLoaded", function () {
-        const navbar = document.getElementById("mainNavbar");
-        let lastScrollTop = 0;
-
-        window.addEventListener("scroll", function () {
-            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-            if (currentScroll > lastScrollTop) {
-                // User is scrolling down, hide the navbar
-                navbar.classList.add("hidden");
-            } else {
-                // User is scrolling up, show the navbar
-                navbar.classList.remove("hidden");
+function initFeatureCardScrolling() {
+    const featureCards = document.querySelectorAll('.feature-card');
+    featureCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const target = card.getAttribute('data-target');
+            if (target) {
+                scrollToTarget(target);
             }
-
-            // Update the last scroll position
-            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For mobile or negative scrolling
         });
     });
+}
 
-    //Initialize AOS
-    document.addEventListener('DOMContentLoaded', function () {
-        AOS.init({
-            duration: 1000, 
-            once: false 
-        });
+function handleNavbarScroll(navbar, lastScroll) {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    if (currentScroll > lastScroll.value) {
+        navbar.classList.add('hidden');
+    } else {
+        navbar.classList.remove('hidden');
+    }
+    lastScroll.value = currentScroll <= 0 ? 0 : currentScroll;
+}
+
+function initNavbarHideOnScroll() {
+    const navbar = document.getElementById('mainNavbar');
+    if (!navbar) return;
+    const lastScroll = { value: 0 };
+    window.addEventListener('scroll', () => handleNavbarScroll(navbar, lastScroll));
+}
+
+function initAOS() {
+    AOS.init({
+        duration: 1000,
+        once: false
     });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initFeatureCardScrolling();
+    initNavbarHideOnScroll();
+    initAOS();
+});
