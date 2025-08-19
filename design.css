@@ -1,17 +1,43 @@
+/* Color variables for consistent theming */
+:root {
+    --color-primary: #8b5fbf; /* Main brand purple */
+    --color-accent: #6a4494; /* Dark purple accent */
+    --color-bg-light: #f5f7fa; /* Light gradient start */
+    --color-bg-medium: #c3cfe2; /* Medium gradient end */
+    --color-bg-alt: #e7d5e7; /* Alternate gradient tone */
+    --color-footer-bg: #603f83; /* Footer background */
+    --color-accent-rgb: 106, 68, 148; /* Accent color for shadows */
+    --color-hero-overlay-start-rgb: 244, 233, 233; /* Hero overlay start */
+    --color-hero-overlay-end-rgb: 228, 219, 219; /* Hero overlay end */
+    --color-pulse-rgb: 170, 90, 90; /* Pulse animation color */
+    --color-text-dark: #444444; /* Default dark text */
+    --color-social-icon-bg: #193f3f; /* Social icon background */
+    --color-social-icon-hover: #afeeee; /* Social icon hover */
+}
+
 html {
     scroll-behavior: smooth;
 }
 
-p{
-font-style: italic;
+:root {
+    --bs-font-sans-serif: "Inter", sans-serif;
+    --bs-body-font-family: "Inter", sans-serif;
 }
 
-h1{
-    font-family: "Tangerine", sans-serif !important;
+body {
+    font-family: var(--bs-body-font-family);
+}
+
+p{
+    font-style: italic;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Tangerine", cursive !important;
 }
 
 .navbar {
-    background: linear-gradient(135deg, #f5f7fa 25%, #c3cfe2 100%);
+    background: linear-gradient(135deg, var(--color-bg-light) 25%, var(--color-bg-medium) 100%);
     transition: box-shadow 0.3s ease-in-out;
 }
 
@@ -20,7 +46,7 @@ h1{
 }
 
 .navbar .dropdown-menu {
-    background: linear-gradient(135deg, #f5f7fa 25%, #c3cfe2 100%);
+    background: linear-gradient(135deg, var(--color-bg-light) 25%, var(--color-bg-medium) 100%);
     border: none;
 }
 
@@ -46,7 +72,7 @@ h1{
     top: -100px; /* Move navbar out of view */
 }
 .hero-section {
-    background: linear-gradient(rgba(244, 233, 233, 0), rgba(228, 219, 219, 0.1)), url(./images/heroBackground1.jpg) no-repeat center center/cover;
+    background: linear-gradient(rgba(var(--color-hero-overlay-start-rgb), 0), rgba(var(--color-hero-overlay-end-rgb), 0.1)), url(./images/heroBackground1.jpg) no-repeat center center/cover;
     color: white;
     height: 100vh;
     display: flex;
@@ -55,7 +81,7 @@ h1{
     text-align: center;
 }
 #otherServices, #manicureSection, #callToAction {
-    background: linear-gradient(135deg, #f5f7fa 25%, #c3cfe2 100%);
+    background: linear-gradient(135deg, var(--color-bg-light) 25%, var(--color-bg-medium) 100%);
     padding: 50px 0;
 }
 
@@ -68,33 +94,33 @@ h1{
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 .sectionHeadingMain{
-    font-family: "Pacifico", serif;
-    color: rgb(168, 136, 199);
+    font-family: "Tangerine", cursive;
+    color: var(--color-primary);
     font-size: 48px !important;
     font-weight: 100 !important;
 }
 .service-card-heading {
-    font-family: "Tangerine", sans-serif !important;
-    color: rgb(119, 82, 148) !important;
+    font-family: "Tangerine", cursive !important;
+    color: var(--color-primary) !important;
     font-weight: 700 !important;
     font-size: 36px;
 }
 .listOtherServices{
-    font-family: "Tangerine", sans-serif !important;
-    color: rgb(119, 82, 148) !important;
+    font-family: "Tangerine", cursive !important;
+    color: var(--color-primary) !important;
     font-weight: 700 !important;
     font-size: 32px;
 }
 .headingCallToAction{
-    font-family: "Tangerine", sans-serif !important;
-    color: rgb(119, 82, 148) !important;
+    font-family: "Tangerine", cursive !important;
+    color: var(--color-primary) !important;
     font-weight: 700 !important;
     font-size: 48px;
 }
 .manicureList{
     font-family: "Lora", serif;
-    color: rgb(68, 68, 68);
-    line-height: 1.6; 
+    color: var(--color-text-dark);
+    line-height: 1.6;
 }
 
 .btn-fancy-outline {
@@ -127,7 +153,7 @@ h1{
 }
 
 .btn-fancy-outline:hover {
-    color: #8b5fbf;
+    color: var(--color-primary);
 }
 .btn-fancy {
     position: relative;
@@ -137,11 +163,11 @@ h1{
     letter-spacing: 1px;
     border: none;
     border-radius: 50px;
-    background: linear-gradient(45deg, #8b5fbf, #6a4494);
+    background: linear-gradient(45deg, var(--color-primary), var(--color-accent));
     color: white;
     overflow: hidden;
     transition: all 0.3s ease;
-    box-shadow: 0 6px 15px rgba(106, 68, 148, 0.3);
+    box-shadow: 0 6px 15px rgba(var(--color-accent-rgb), 0.3);
     z-index: 1;
 }
 
@@ -152,7 +178,7 @@ h1{
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, #6a4494, #8b5fbf);
+    background: linear-gradient(45deg, var(--color-accent), var(--color-primary));
     transition: all 0.5s ease;
     z-index: -1;
 }
@@ -163,7 +189,7 @@ h1{
 
 .btn-fancy:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(106, 68, 148, 0.4);
+    box-shadow: 0 8px 20px rgba(var(--color-accent-rgb), 0.4);
     color: white;
 }
 
@@ -171,17 +197,17 @@ h1{
     transform: translateY(-1px);
 }
 .btn-callAction{
-    color: #8b5fbf !important
+    color: var(--color-primary) !important
 }
 .service-card{
-    background: linear-gradient(200deg, #f5f7fa 25%, #e7d5e7 100%);
+    background: linear-gradient(200deg, var(--color-bg-light) 25%, var(--color-bg-alt) 100%);
 }
 .service-card:hover {
     transform: scale(1.02);
     transition: transform 0.3s ease-in-out;
 }
 .divContainer{
-    background: linear-gradient(200deg, #f5f7fa 25%, #e7d5e7 100%);
+    background: linear-gradient(200deg, var(--color-bg-light) 25%, var(--color-bg-alt) 100%);
 }
 .serviceImage:hover {
     filter: brightness(1.1);
@@ -224,7 +250,7 @@ h1{
 }
 
 footer {
-    background-color: #603F83FF;
+    background-color: var(--color-footer-bg);
     color: white;
     padding: 20px 0;
     text-align: center;
@@ -256,16 +282,18 @@ footer {
     justify-content: center;
     width: 45px;
     height: 45px;
-    background-color: rgb(25, 63, 63);
+    background-color: var(--color-social-icon-bg);
     color: white;
     border-radius: 8px 0 0 8px;
     transition: all 0.3s ease;
     text-decoration: none;
 }
 
-.sticky-social-bar .social-icon:hover {
+.sticky-social-bar .social-icon:hover,
+.sticky-social-bar .social-icon:focus,
+.sticky-social-bar .social-icon:active {
     width: 55px;
-    background-color: paleturquoise;
+    background-color: var(--color-social-icon-hover);
 }
 
 .sticky-social-bar .social-icon i {
@@ -277,13 +305,48 @@ footer {
 }
 @keyframes pulse {
     0% {
-        box-shadow: 0 0 0 0 rgba(170, 90, 90, 0.4);
+        box-shadow: 0 0 0 0 rgba(var(--color-pulse-rgb), 0.4);
     }
     70% {
         box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
     }
     100% {
         box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section {
+        height: auto;
+    }
+
+    .hero-section .container {
+        padding-top: 60px !important;
+    }
+
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .btn-fancy,
+    .btn-fancy-outline {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    #otherServices,
+    #manicureSection,
+    #callToAction {
+        padding: 30px 0;
+    }
+
+    .sectionHeadingMain,
+    .headingCallToAction {
+        font-size: 36px !important;
+    }
+
+    .sticky-social-bar {
+        display: none;
     }
 }
 
