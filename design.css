@@ -6,6 +6,9 @@ p{
 font-style: italic;
 }
 
+h1{
+    font-family: "Tangerine", sans-serif !important;
+}
 
 .navbar {
     background: linear-gradient(135deg, #f5f7fa 25%, #c3cfe2 100%);
