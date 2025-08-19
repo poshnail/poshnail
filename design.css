@@ -17,6 +17,21 @@ font-style: italic;
 .navbar-shadow {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+.navbar .dropdown-menu {
+    background: linear-gradient(135deg, #f5f7fa 25%, #c3cfe2 100%);
+    border: none;
+}
+
+.navbar .dropdown-item {
+    color: rgba(0, 0, 0, 0.55);
+}
+
+.navbar .dropdown-item:hover,
+.navbar .dropdown-item:focus {
+    color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.05);
+}
 #mainNavbar {
     position: fixed;
     top: 0;
