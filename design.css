@@ -287,3 +287,38 @@ footer {
     }
 }
 
+@media (max-width: 576px) {
+    .hero-section {
+        height: auto;
+    }
+
+    .hero-section .container {
+        padding-top: 60px !important;
+    }
+
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .btn-fancy,
+    .btn-fancy-outline {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    #otherServices,
+    #manicureSection,
+    #callToAction {
+        padding: 30px 0;
+    }
+
+    .sectionHeadingMain,
+    .headingCallToAction {
+        font-size: 36px !important;
+    }
+
+    .sticky-social-bar {
+        display: none;
+    }
+}
+
