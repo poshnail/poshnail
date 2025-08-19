@@ -2,12 +2,21 @@ html {
     scroll-behavior: smooth;
 }
 
-p{
-font-style: italic;
+:root {
+    --bs-font-sans-serif: "Inter", sans-serif;
+    --bs-body-font-family: "Inter", sans-serif;
 }
 
-h1{
-    font-family: "Tangerine", sans-serif !important;
+body {
+    font-family: var(--bs-body-font-family);
+}
+
+p{
+    font-style: italic;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Tangerine", cursive !important;
 }
 
 .navbar {
@@ -68,33 +77,33 @@ h1{
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 .sectionHeadingMain{
-    font-family: "Pacifico", serif;
+    font-family: "Tangerine", cursive;
     color: rgb(168, 136, 199);
     font-size: 48px !important;
     font-weight: 100 !important;
 }
 .service-card-heading {
-    font-family: "Tangerine", sans-serif !important;
+    font-family: "Tangerine", cursive !important;
     color: rgb(119, 82, 148) !important;
     font-weight: 700 !important;
     font-size: 36px;
 }
 .listOtherServices{
-    font-family: "Tangerine", sans-serif !important;
+    font-family: "Tangerine", cursive !important;
     color: rgb(119, 82, 148) !important;
     font-weight: 700 !important;
     font-size: 32px;
 }
 .headingCallToAction{
-    font-family: "Tangerine", sans-serif !important;
+    font-family: "Tangerine", cursive !important;
     color: rgb(119, 82, 148) !important;
     font-weight: 700 !important;
     font-size: 48px;
 }
 .manicureList{
-    font-family: "Lora", serif;
+    font-family: "Inter", sans-serif;
     color: rgb(68, 68, 68);
-    line-height: 1.6; 
+    line-height: 1.6;
 }
 
 .btn-fancy-outline {
