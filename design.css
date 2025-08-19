@@ -256,16 +256,20 @@ footer {
     justify-content: center;
     width: 45px;
     height: 45px;
-    background-color: rgb(25, 63, 63);
-    color: white;
+    /* Use site's primary color for default state */
+    background-color: #8b5fbf;
+    color: #ffffff;
     border-radius: 8px 0 0 8px;
     transition: all 0.3s ease;
     text-decoration: none;
 }
 
-.sticky-social-bar .social-icon:hover {
+.sticky-social-bar .social-icon:hover,
+.sticky-social-bar .social-icon:focus,
+.sticky-social-bar .social-icon:active {
     width: 55px;
-    background-color: paleturquoise;
+    /* Accent color on interaction */
+    background-color: #6a4494;
 }
 
 .sticky-social-bar .social-icon i {
