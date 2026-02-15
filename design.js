@@ -32,6 +32,22 @@ function initNavbarHideOnScroll() {
     window.addEventListener('scroll', () => handleNavbarScroll(navbar, lastScroll));
 }
 
+function initNavbarOutsideClickClose() {
+    const navbar = document.getElementById('mainNavbar');
+    const collapseEl = document.getElementById('navbarNav');
+    if (!navbar || !collapseEl || typeof bootstrap === 'undefined') return;
+
+    document.addEventListener('click', (event) => {
+        const isMenuOpen = collapseEl.classList.contains('show');
+        if (!isMenuOpen) return;
+
+        const clickedInsideNavbar = navbar.contains(event.target);
+        if (!clickedInsideNavbar) {
+            bootstrap.Collapse.getOrCreateInstance(collapseEl).hide();
+        }
+    });
+}
+
 function initAOS() {
     AOS.init({
         duration: 1000,
@@ -42,5 +58,6 @@ function initAOS() {
 document.addEventListener('DOMContentLoaded', () => {
     initFeatureCardScrolling();
     initNavbarHideOnScroll();
+    initNavbarOutsideClickClose();
     initAOS();
 });
